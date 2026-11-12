@@ -126,6 +126,24 @@ mark{background:#ffe27a;color:#14222f;border-radius:2px}
 .empty{padding:24px;text-align:center;color:var(--muted)}
 .credit{color:var(--muted);font-size:12.5px;margin-top:40px;border-top:1px solid var(--line);padding-top:12px}
 #top{position:fixed;right:max(16px,calc(env(safe-area-inset-right,0px) + 16px));bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:8}
+/* memory aids cram sheet */
+.aid-bar{display:flex;align-items:center;gap:8px 14px;flex-wrap:wrap;margin:6px 0 4px}
+.aid-bar .refs{margin:0;flex:1 1 320px}
+.aid-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));column-gap:12px;align-items:start}
+.aid-grid .group{grid-column:1/-1}
+.group.aid-g{color:var(--accent)}
+.aid .code{background:var(--accent-soft);color:var(--accent);letter-spacing:.04em}
+details.aid>summary{flex-wrap:wrap;row-gap:2px}
+details.aid>summary h3{font-size:13.5px;color:var(--muted)}
+.el-b .aid-l{list-style:none;padding-left:0;margin:8px 0}
+.aid-l li{margin:2px 0;font-size:14px;line-height:1.45}
+.aid-l b{color:var(--accent)}
+.el-b .aid-x{font-size:13.5px;margin:6px 0}
+.aid-src{display:inline-block;margin-top:2px;font:600 11.5px var(--mono);text-decoration:none}
+#aidQuiz[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--panel)}
+.aids.quiz-on .aid-l li,.aids.quiz-on .aid-x{cursor:pointer}
+.aids.quiz-on .aid-m{color:transparent;background:var(--code-bg);border-radius:3px;user-select:none}
+.aids.quiz-on .aid-m.rev{color:inherit;background:none;user-select:auto}
 @media (max-width:900px){
   .wrap{grid-template-columns:minmax(0,1fr)}
   #tocBtn{display:inline-block}
@@ -2844,41 +2862,409 @@ mark{background:#ffe27a;color:#14222f;border-radius:2px}
 </section>
 
 <!-- ============ MNEMONICS ============ -->
-<section class="task" id="ref-mn" data-area="Reference" data-title="Mnemonics">
-<div class="task-h"><span class="big">Aa</span><div><span class="eyebrow">Memory aids</span><h2>Mnemonics</h2></div></div>
-<details class="el k" id="ref-mn-list"><summary><span class="code">All</span><h3>Every memory aid in this guide</h3></summary><div class="el-b">
-<div class="tbl-w"><table>
-<tr><th>Mnemonic</th><th>Stands for</th><th>Where</th></tr>
-<tr><td><span class="mn">6 HITS</span></td><td>6 approaches, Holding, Intercepting and Tracking, nav Systems</td><td><a href="#IR-I-A-K1">I.A</a></td></tr>
-<tr><td><span class="mn">IM SAFE</span></td><td>Illness, Medication, Stress, Alcohol, Fatigue, Emotion</td><td><a href="#IR-I-A-R3">I.A</a></td></tr>
-<tr><td><span class="mn">PAVE</span></td><td>Pilot, Aircraft, enVironment, External pressures</td><td><a href="#IR-I-C-R1">I.C</a></td></tr>
-<tr><td><span class="mn">NW KRAFT</span></td><td>91.103 preflight: NOTAMs, Weather, Known delays, Runway, Alternatives, Fuel, Takeoff/landing data</td><td><a href="#IR-I-B-K1">I.B</a></td></tr>
-<tr><td><span class="mn">1-2-3</span></td><td>No alternate if 1 hr either side of ETA: 2,000 ft ceiling, 3 SM</td><td><a href="#IR-I-C-K1">I.C</a></td></tr>
-<tr><td><span class="mn">GRAB CARD</span></td><td>IFR equipment: Generator, Radios, Altimeter, Ball, Clock, Attitude, Rate of turn, Directional gyro</td><td><a href="#IR-II-C-K2">II.C</a></td></tr>
-<tr><td><span class="mn">AVIATES</span></td><td>ADs, VOR 30 days, Inspections, Altimeter/static 24 mo, Transponder 24 mo, ELT 12 mo, STCs</td><td><a href="#IR-II-C-K2">II.C</a></td></tr>
-<tr><td><span class="mn">ARROW</span></td><td>Airworthiness, Registration, Radio license, Operating limits, Weight and balance</td><td><a href="#IR-II-C-K2">II.C</a></td></tr>
-<tr><td><span class="mn">DV MONA</span></td><td>Compass errors: Deviation, Variation, Magnetic dip, Oscillation, North/south turning, Acceleration</td><td><a href="#IR-II-B-K1">II.B</a></td></tr>
-<tr><td><span class="mn">UNOS · ANDS</span></td><td>Undershoot North, Overshoot South · Accelerate North, Decelerate South</td><td><a href="#IR-II-B-K1">II.B</a></td></tr>
-<tr><td><span class="mn">DEPS</span></td><td>VOR check log: Date, Error, Place, Signature</td><td><a href="#IR-II-B-K2">II.B</a></td></tr>
-<tr><td><span class="mn">C RAFT</span></td><td>Clearance limit, Route, Altitude, Frequency, Transponder</td><td><a href="#IR-III-A-K1">III.A</a></td></tr>
-<tr><td><span class="mn">MARVELOUS VFR C500</span></td><td>Required reports</td><td><a href="#IR-III-A-K3">III.A</a></td></tr>
-<tr><td><span class="mn">A PTA TEN R</span></td><td>Position report items</td><td><a href="#IR-III-A-K3">III.A</a></td></tr>
-<tr><td><span class="mn">5 Ts</span></td><td>Turn, Time, Twist, Throttle, Talk</td><td><a href="#IR-III-B-K1">III.B</a></td></tr>
-<tr><td><span class="mn">SHARP TT</span></td><td>No procedure turn: Straight-in, Holding in lieu, Arc, Radar vectors, no PT charted, Timed approach, Teardrop</td><td><a href="#IR-VI-A-K1">VI.A</a></td></tr>
-<tr><td><span class="mn">AVEF · MEA</span></td><td>Lost comm route: Assigned, Vectored, Expected, Filed · Altitude: highest of Minimum, Expected, Assigned</td><td><a href="#IR-VII-A-K1">VII.A</a></td></tr>
-<tr><td><span class="mn">PPSCRIPT</span></td><td>Private privileges: PIC/passengers, Pro rata, Salesman, Charity, Rescue, Incidental to business, Production test, Towing</td><td><a href="#IR-I-A-K2">I.A</a></td></tr>
-<tr><td><span class="mn">SPARROWED</span></td><td>Documents: Supplements, Placards, Airworthiness, Registration, Radio license, Operating handbook, Weight and balance, External data plate, Deviation card</td><td><a href="#IR-docs">II.C</a></td></tr>
-<tr><td><span class="mn">30-FTDUC</span></td><td>Registration ends: 30 days after death, Foreign, Transfer, Destroyed, US citizenship lost, Cancelled</td><td><a href="#IR-docs">II.C</a></td></tr>
-<tr><td><span class="mn">M · KART</span></td><td>Inoperative equipment: no MEL → KOEL, ADs, Regulations, Type certificate</td><td><a href="#IR-II-C-K3">II.C</a></td></tr>
-<tr><td><span class="mn">UPAIRS</span></td><td>Fog: Upslope, Precipitation-induced, Advection, Ice, Radiation, Steam</td><td><a href="#IR-I-B-K3j">I.B</a></td></tr>
-<tr><td><span class="mn">ICE FLAGS</span></td><td>Illusions: Inversion, Coriolis, Elevator, False horizon, Leans, Autokinesis, Graveyard spiral, Somatogravic</td><td><a href="#IR-IV-A-R2">IV.A</a></td></tr>
-<tr><td><span class="mn">RFRAG</span></td><td>Landing illusions: Runway width, Featureless terrain, Runway slope, Atmospheric, Ground lighting</td><td><a href="#IR-IV-A-R2">IV.A</a></td></tr>
-<tr><td><span class="mn">RAIMI</span></td><td>Hazardous attitudes: Resignation, Anti-authority, Impulsivity, Macho, Invulnerability</td><td><a href="#ref-aero-adm">Ref</a></td></tr>
-<tr><td><span class="mn">3P · DECIDE</span></td><td>Perceive, Process, Perform · Detect, Estimate, Choose, Identify, Do, Evaluate</td><td><a href="#ref-aero-adm">Ref</a></td></tr>
-<tr><td><span class="mn">MCPRAWN</span></td><td>Special use airspace: MOA, Controlled firing, Prohibited, Restricted, Alert, Warning, National security</td><td><a href="#ref-air-sua">Ref</a></td></tr>
-<tr><td><span class="mn">VANTSS</span></td><td>TFRs: VIPs, Air shows, Natural disasters, Theme parks, Stadiums, Space launches</td><td><a href="#ref-air-sua">Ref</a></td></tr>
-</table></div>
+<section class="task aids" id="ref-mn" data-area="Reference" data-title="Memory Aids">
+<div class="task-h"><span class="big">Aa</span><div><span class="eyebrow">Cram sheet</span><h2>Memory Aids</h2></div></div>
+<div class="aid-bar">
+<p class="refs">Every mnemonic in the guide on one page, grouped by Area. Turn on quiz mode to hide the meanings, then tap a line to check yourself.</p>
+<button class="btn" id="aidQuiz" aria-pressed="false">Quiz me: hide meanings</button>
+</div>
+<div class="aid-grid">
+
+<div class="group aid-g">I · Preflight Preparation</div>
+<details class="el aid" id="aid-6hits" open><summary><span class="code">6 HITS</span><h3>Instrument currency · 61.57(c)</h3></summary><div class="el-b">
+<ul class="aid-l">
+<li><b>6</b><span class="aid-m"> instrument approaches</span></li>
+<li><b>H</b><span class="aid-m">olding procedures and tasks</span></li>
+<li><b>I</b><span class="aid-m">ntercepting</span></li>
+<li><b>T</b><span class="aid-m">racking courses</span></li>
+<li><b>S</b><span class="aid-m">ystems — using navigational electronic systems</span></li>
+</ul>
+<p class="aid-x">Within <span class="aid-m">the 6 calendar months before the month of the flight.</span></p>
+<a class="aid-src" href="#IR-I-A-K1">IR.I.A.K1 →</a>
 </div></details>
+
+<details class="el aid" id="aid-ppscript" open><summary><span class="code">PPSCRIPT</span><h3>Private pilot privileges · 61.113</h3></summary><div class="el-b">
+<ul class="aid-l">
+<li><b>P</b><span class="aid-m">IC and carry passengers, not for hire</span></li>
+<li><b>P</b><span class="aid-m">ro rata share of expenses, common purpose</span></li>
+<li><b>S</b><span class="aid-m">alesman — 200 hours</span></li>
+<li><b>C</b><span class="aid-m">harity — 91.146, 500 hours</span></li>
+<li><b>R</b><span class="aid-m">escue — search and location, reimbursement allowed</span></li>
+<li><b>I</b><span class="aid-m">ncidental to business — no passengers or property for hire</span></li>
+<li><b>P</b><span class="aid-m">roduction flight test — light-sport, 100 hr PIC</span></li>
+<li><b>T</b><span class="aid-m">owing — 61.69, 100 hr PIC</span></li>
+</ul>
+<a class="aid-src" href="#IR-I-A-K2">IR.I.A.K2 →</a>
+</div></details>
+
+<details class="el aid" id="aid-imsafe" open><summary><span class="code">IM SAFE</span><h3>Fit to fly?</h3></summary><div class="el-b">
+<ul class="aid-l">
+<li><b>I</b><span class="aid-m">llness</span></li>
+<li><b>M</b><span class="aid-m">edication</span></li>
+<li><b>S</b><span class="aid-m">tress</span></li>
+<li><b>A</b><span class="aid-m">lcohol — 8 hours, under .04%, not under the influence (91.17)</span></li>
+<li><b>F</b><span class="aid-m">atigue</span></li>
+<li><b>E</b><span class="aid-m">motion</span></li>
+</ul>
+<a class="aid-src" href="#IR-I-A-R3">IR.I.A.R3 →</a>
+</div></details>
+
+<details class="el aid" id="aid-nwkraft" open><summary><span class="code">NW KRAFT</span><h3>Preflight action · 91.103</h3></summary><div class="el-b">
+<ul class="aid-l">
+<li><b>N</b><span class="aid-m">OTAMs</span></li>
+<li><b>W</b><span class="aid-m">eather</span></li>
+<li><b>K</b><span class="aid-m">nown ATC delays</span></li>
+<li><b>R</b><span class="aid-m">unway lengths</span></li>
+<li><b>A</b><span class="aid-m">lternatives</span></li>
+<li><b>F</b><span class="aid-m">uel requirements</span></li>
+<li><b>T</b><span class="aid-m">akeoff and landing performance</span></li>
+</ul>
+<a class="aid-src" href="#IR-I-B-K1">IR.I.B.K1 →</a>
+</div></details>
+
+<details class="el aid" id="aid-upairs" open><summary><span class="code">UPAIRS</span><h3>Types of fog</h3></summary><div class="el-b">
+<ul class="aid-l">
+<li><b>U</b><span class="aid-m">pslope — moist stable air up terrain; needs wind</span></li>
+<li><b>P</b><span class="aid-m">recipitation-induced — warm rain through cool air</span></li>
+<li><b>A</b><span class="aid-m">dvection — moist air over a colder surface; needs wind</span></li>
+<li><b>I</b><span class="aid-m">ce — ice crystals in very cold temperatures</span></li>
+<li><b>R</b><span class="aid-m">adiation — clear, calm nights</span></li>
+<li><b>S</b><span class="aid-m">team — cold air over warmer water</span></li>
+</ul>
+<a class="aid-src" href="#IR-I-B-K3j">IR.I.B.K3j →</a>
+</div></details>
+
+<details class="el aid" id="aid-123" open><summary><span class="code">1-2-3</span><h3>Destination alternate · 91.169</h3></summary><div class="el-b">
+<ul class="aid-l">
+<li><b>1</b><span class="aid-m"> hour before to 1 hour after ETA</span></li>
+<li><b>2</b><span class="aid-m">,000 ft ceiling or better</span></li>
+<li><b>3</b><span class="aid-m"> SM visibility or better</span></li>
+</ul>
+<p class="aid-x">If met, <span class="aid-m">no alternate required (the destination also needs a published instrument approach).</span></p>
+<a class="aid-src" href="#IR-I-C-K1">IR.I.C.K1 →</a>
+</div></details>
+
+<div class="group aid-g">II · Preflight Procedures</div>
+<details class="el aid" id="aid-dvmona" open><summary><span class="code">DV MONA</span><h3>Magnetic compass errors</h3></summary><div class="el-b">
+<ul class="aid-l">
+<li><b>D</b><span class="aid-m">eviation — the airplane's own fields; compass card</span></li>
+<li><b>V</b><span class="aid-m">ariation</span></li>
+<li><b>M</b><span class="aid-m">agnetic dip</span></li>
+<li><b>O</b><span class="aid-m">scillation</span></li>
+<li><b>N</b><span class="aid-m">orth/south turning errors</span></li>
+<li><b>A</b><span class="aid-m">cceleration errors</span></li>
+</ul>
+<p class="aid-x"><span class="mn">UNOS</span> <span class="aid-m">Undershoot North, Overshoot South</span></p>
+<p class="aid-x"><span class="mn">ANDS</span> <span class="aid-m">Accelerate North, Decelerate South (east/west headings)</span></p>
+<a class="aid-src" href="#IR-II-B-K1">IR.II.B.K1 →</a>
+</div></details>
+
+<details class="el aid" id="aid-deps" open><summary><span class="code">DEPS</span><h3>VOR check log · 91.171</h3></summary><div class="el-b">
+<ul class="aid-l">
+<li><b>D</b><span class="aid-m">ate</span></li>
+<li><b>E</b><span class="aid-m">rror (bearing error)</span></li>
+<li><b>P</b><span class="aid-m">lace</span></li>
+<li><b>S</b><span class="aid-m">ignature</span></li>
+</ul>
+<a class="aid-src" href="#IR-II-B-K2">IR.II.B.K2 →</a>
+</div></details>
+
+<details class="el aid" id="aid-grabcard" open><summary><span class="code">GRAB CARD</span><h3>IFR equipment · 91.205(d)</h3></summary><div class="el-b">
+<ul class="aid-l">
+<li><b>G</b><span class="aid-m">enerator or alternator</span></li>
+<li><b>R</b><span class="aid-m">adios — two-way comm and nav for the facilities used</span></li>
+<li><b>A</b><span class="aid-m">ltimeter — sensitive, adjustable</span></li>
+<li><b>B</b><span class="aid-m">all — slip-skid indicator</span></li>
+<li><b>C</b><span class="aid-m">lock — hours, minutes, seconds</span></li>
+<li><b>A</b><span class="aid-m">ttitude indicator</span></li>
+<li><b>R</b><span class="aid-m">ate-of-turn indicator</span></li>
+<li><b>D</b><span class="aid-m">irectional gyro</span></li>
+</ul>
+<p class="aid-x">Plus <span class="aid-m">A TOMATO FLAMES (day) and FLAPS (night).</span></p>
+<a class="aid-src" href="#IR-II-C-K2">IR.II.C.K2 →</a>
+</div></details>
+
+<details class="el aid" id="aid-atomatoflames" open><summary><span class="code">A TOMATO FLAMES</span><h3>Day VFR equipment · 91.205(b)</h3></summary><div class="el-b">
+<ul class="aid-l">
+<li><b>A</b><span class="aid-m">irspeed indicator</span></li>
+<li><b>T</b><span class="aid-m">achometer</span></li>
+<li><b>O</b><span class="aid-m">il pressure gauge</span></li>
+<li><b>M</b><span class="aid-m">anifold pressure gauge (altitude engine)</span></li>
+<li><b>A</b><span class="aid-m">ltimeter</span></li>
+<li><b>T</b><span class="aid-m">emperature gauge (liquid-cooled)</span></li>
+<li><b>O</b><span class="aid-m">il temperature gauge (air-cooled)</span></li>
+<li><b>F</b><span class="aid-m">uel gauge for each tank</span></li>
+<li><b>L</b><span class="aid-m">anding gear position indicator (retractable)</span></li>
+<li><b>A</b><span class="aid-m">nti-collision lights (certificated after March 11, 1996)</span></li>
+<li><b>M</b><span class="aid-m">agnetic compass</span></li>
+<li><b>E</b><span class="aid-m">LT (91.207)</span></li>
+<li><b>S</b><span class="aid-m">afety belts</span></li>
+</ul>
+<a class="aid-src" href="#IR-II-C-K2">IR.II.C.K2 →</a>
+</div></details>
+
+<details class="el aid" id="aid-flaps" open><summary><span class="code">FLAPS</span><h3>Night VFR adds · 91.205(c)</h3></summary><div class="el-b">
+<ul class="aid-l">
+<li><b>F</b><span class="aid-m">uses (spare) or circuit breakers</span></li>
+<li><b>L</b><span class="aid-m">anding light (if for hire)</span></li>
+<li><b>A</b><span class="aid-m">nti-collision lights</span></li>
+<li><b>P</b><span class="aid-m">osition (nav) lights</span></li>
+<li><b>S</b><span class="aid-m">ource of electrical power</span></li>
+</ul>
+<a class="aid-src" href="#IR-II-C-K2">IR.II.C.K2 →</a>
+</div></details>
+
+<details class="el aid" id="aid-aviates" open><summary><span class="code">AV1ATES</span><h3>IFR inspections</h3></summary><div class="el-b">
+<ul class="aid-l">
+<li><b>A</b><span class="aid-m">Ds complied with</span></li>
+<li><b>V</b><span class="aid-m">OR check — 30 days (91.171)</span></li>
+<li><b>I</b><span class="aid-m">nspections — annual; 100-hour if for hire (91.409)</span></li>
+<li><b>A</b><span class="aid-m">ltimeter, static, encoder — 24 calendar months (91.411)</span></li>
+<li><b>T</b><span class="aid-m">ransponder — 24 calendar months (91.413)</span></li>
+<li><b>E</b><span class="aid-m">LT — 12 calendar months; battery at 1 hr use or 50% life (91.207)</span></li>
+<li><b>S</b><span class="aid-m">TC-required inspections</span></li>
+</ul>
+<a class="aid-src" href="#IR-II-C-K2">IR.II.C.K2 →</a>
+</div></details>
+
+<details class="el aid" id="aid-arrow" open><summary><span class="code">ARROW</span><h3>Documents aboard</h3></summary><div class="el-b">
+<ul class="aid-l">
+<li><b>A</b><span class="aid-m">irworthiness certificate</span></li>
+<li><b>R</b><span class="aid-m">egistration</span></li>
+<li><b>R</b><span class="aid-m">adio station license (international)</span></li>
+<li><b>O</b><span class="aid-m">perating limitations (AFM/POH, placards)</span></li>
+<li><b>W</b><span class="aid-m">eight and balance</span></li>
+</ul>
+<a class="aid-src" href="#IR-II-C-K2">IR.II.C.K2 →</a>
+</div></details>
+
+<details class="el aid" id="aid-sparrowed" open><summary><span class="code">SPARROWED</span><h3>Documents, expanded</h3></summary><div class="el-b">
+<ul class="aid-l">
+<li><b>S</b><span class="aid-m">upplements — avionics; GPS supplement approves IFR use</span></li>
+<li><b>P</b><span class="aid-m">lacards</span></li>
+<li><b>A</b><span class="aid-m">irworthiness certificate — displayed (91.203)</span></li>
+<li><b>R</b><span class="aid-m">egistration — expires every 7 years (47.40)</span></li>
+<li><b>R</b><span class="aid-m">adio station license — international</span></li>
+<li><b>O</b><span class="aid-m">perating handbook (POH/AFM) — 91.9</span></li>
+<li><b>W</b><span class="aid-m">eight and balance data</span></li>
+<li><b>E</b><span class="aid-m">xternal data plate</span></li>
+<li><b>D</b><span class="aid-m">eviation card</span></li>
+</ul>
+<a class="aid-src" href="#IR-docs">91.203 · 47 →</a>
+</div></details>
+
+<details class="el aid" id="aid-30ftduc" open><summary><span class="code">30-FTDUC</span><h3>When registration ends · 47.41</h3></summary><div class="el-b">
+<ul class="aid-l">
+<li><b>30</b><span class="aid-m"> days after the owner's death</span></li>
+<li><b>F</b><span class="aid-m">oreign registration</span></li>
+<li><b>T</b><span class="aid-m">ransfer of ownership</span></li>
+<li><b>D</b><span class="aid-m">estroyed or scrapped</span></li>
+<li><b>U</b><span class="aid-m">S citizenship lost</span></li>
+<li><b>C</b><span class="aid-m">ancelled</span></li>
+</ul>
+<a class="aid-src" href="#IR-docs">91.203 · 47 →</a>
+</div></details>
+
+<details class="el aid" id="aid-mkart" open><summary><span class="code">M · KART</span><h3>Inoperative equipment · 91.213(d)</h3></summary><div class="el-b">
+<ul class="aid-l">
+<li><b>M</b><span class="aid-m">EL — none approved, then check the KART</span></li>
+<li><b>K</b><span class="aid-m">OEL</span></li>
+<li><b>A</b><span class="aid-m">Ds</span></li>
+<li><b>R</b><span class="aid-m">egulations (91.205 and others)</span></li>
+<li><b>T</b><span class="aid-m">ype certificate data sheet</span></li>
+</ul>
+<p class="aid-x">Then: <span class="aid-m">remove, or deactivate and placard "Inoperative"; a pilot or mechanic decides it's not a hazard.</span></p>
+<a class="aid-src" href="#IR-II-C-K3">IR.II.C.K3 →</a>
+</div></details>
+
+<div class="group aid-g">III · ATC Clearances and Procedures</div>
+<details class="el aid" id="aid-craft" open><summary><span class="code">C RAFT</span><h3>Clearance format</h3></summary><div class="el-b">
+<ul class="aid-l">
+<li><b>C</b><span class="aid-m">learance limit</span></li>
+<li><b>R</b><span class="aid-m">oute</span></li>
+<li><b>A</b><span class="aid-m">ltitude — initial and expected</span></li>
+<li><b>F</b><span class="aid-m">requency — departure</span></li>
+<li><b>T</b><span class="aid-m">ransponder code</span></li>
+</ul>
+<a class="aid-src" href="#IR-III-A-K1">IR.III.A.K1 →</a>
+</div></details>
+
+<details class="el aid" id="aid-marvelous" open><summary><span class="code">MARVELOUS VFR C500</span><h3>Required reports · 91.183, 91.187</h3></summary><div class="el-b">
+<ul class="aid-l">
+<li><b>M</b><span class="aid-m">issed approach</span></li>
+<li><b>A</b><span class="aid-m">irspeed change ±10 kt or 5% of filed TAS</span></li>
+<li><b>R</b><span class="aid-m">eaching a holding fix — time and altitude</span></li>
+<li><b>V</b><span class="aid-m">FR on top — altitude changes</span></li>
+<li><b>E</b><span class="aid-m">TA change of ±2 minutes *</span></li>
+<li><b>L</b><span class="aid-m">eaving a holding fix</span></li>
+<li><b>O</b><span class="aid-m">uter marker (or fix in lieu) inbound on final *</span></li>
+<li><b>U</b><span class="aid-m">nforecast weather</span></li>
+<li><b>S</b><span class="aid-m">afety of flight information</span></li>
+<li><b>V</b><span class="aid-m">acating an altitude</span></li>
+<li><b>F</b><span class="aid-m">inal approach fix inbound *</span></li>
+<li><b>R</b><span class="aid-m">adio, nav, or approach equipment failure</span></li>
+<li><b>C</b><span class="aid-m">ompulsory reporting points *</span></li>
+<li><b>500</b><span class="aid-m"> — unable to climb or descend at least 500 fpm</span></li>
+</ul>
+<p class="aid-x">* <span class="aid-m">Only when not in radar contact.</span></p>
+<a class="aid-src" href="#IR-III-A-K3">IR.III.A.K3 →</a>
+</div></details>
+
+<details class="el aid" id="aid-aptatenr" open><summary><span class="code">A PTA TEN R</span><h3>Position report · AIM 5-3-2</h3></summary><div class="el-b">
+<ul class="aid-l">
+<li><b>A</b><span class="aid-m">ircraft ID</span></li>
+<li><b>P</b><span class="aid-m">osition</span></li>
+<li><b>T</b><span class="aid-m">ime</span></li>
+<li><b>A</b><span class="aid-m">ltitude</span></li>
+<li><b>T</b><span class="aid-m">ype of flight plan (omit with center or approach)</span></li>
+<li><b>E</b><span class="aid-m">TA and name of next reporting point</span></li>
+<li><b>N</b><span class="aid-m">ame of the following point</span></li>
+<li><b>R</b><span class="aid-m">emarks</span></li>
+</ul>
+<a class="aid-src" href="#IR-III-A-K3">IR.III.A.K3 →</a>
+</div></details>
+
+<details class="el aid" id="aid-5ts" open><summary><span class="code">5 Ts</span><h3>At each fix and turn</h3></summary><div class="el-b">
+<ul class="aid-l">
+<li><b>T</b><span class="aid-m">urn</span></li>
+<li><b>T</b><span class="aid-m">ime</span></li>
+<li><b>T</b><span class="aid-m">wist — set the course</span></li>
+<li><b>T</b><span class="aid-m">hrottle</span></li>
+<li><b>T</b><span class="aid-m">alk</span></li>
+</ul>
+<a class="aid-src" href="#IR-III-B-K1">IR.III.B.K1 →</a>
+</div></details>
+
+<div class="group aid-g">IV · Flight by Reference to Instruments</div>
+<details class="el aid" id="aid-iceflags" open><summary><span class="code">ICE FLAGS</span><h3>Vestibular and visual illusions</h3></summary><div class="el-b">
+<ul class="aid-l">
+<li><b>I</b><span class="aid-m">nversion</span></li>
+<li><b>C</b><span class="aid-m">oriolis</span></li>
+<li><b>E</b><span class="aid-m">levator</span></li>
+<li><b>F</b><span class="aid-m">alse horizon</span></li>
+<li><b>L</b><span class="aid-m">eans</span></li>
+<li><b>A</b><span class="aid-m">utokinesis</span></li>
+<li><b>G</b><span class="aid-m">raveyard spiral</span></li>
+<li><b>S</b><span class="aid-m">omatogravic</span></li>
+</ul>
+<a class="aid-src" href="#IR-IV-A-R2">IR.IV.A.R2 →</a>
+</div></details>
+
+<details class="el aid" id="aid-rfrag" open><summary><span class="code">RFRAG</span><h3>Approach and landing illusions</h3></summary><div class="el-b">
+<ul class="aid-l">
+<li><b>R</b><span class="aid-m">unway width — narrow: fly low · wide: fly high</span></li>
+<li><b>F</b><span class="aid-m">eatureless terrain / black hole — fly low</span></li>
+<li><b>R</b><span class="aid-m">unway slope — upslope: fly low · downslope: fly high</span></li>
+<li><b>A</b><span class="aid-m">tmospheric — rain, haze: fly low · fog: steepen</span></li>
+<li><b>G</b><span class="aid-m">round lighting — bright lights: fly high</span></li>
+</ul>
+<a class="aid-src" href="#IR-IV-A-R2">IR.IV.A.R2 →</a>
+</div></details>
+
+<div class="group aid-g">VI · Instrument Approach Procedures</div>
+<details class="el aid" id="aid-sharptt" open><summary><span class="code">SHARP TT</span><h3>Don't fly the procedure turn</h3></summary><div class="el-b">
+<ul class="aid-l">
+<li><b>S</b><span class="aid-m">traight-in approach clearance</span></li>
+<li><b>H</b><span class="aid-m">olding in lieu of PT (already flown)</span></li>
+<li><b>A</b><span class="aid-m">rc (DME arc) or route marked NoPT</span></li>
+<li><b>R</b><span class="aid-m">adar vectors to final</span></li>
+<li><b>P</b><span class="aid-m"> — no PT depicted</span></li>
+<li><b>T</b><span class="aid-m">imed approach from a holding fix</span></li>
+<li><b>T</b><span class="aid-m">eardrop course reversal charted</span></li>
+</ul>
+<a class="aid-src" href="#IR-VI-A-K1">IR.VI.A.K1 →</a>
+</div></details>
+
+<div class="group aid-g">VII · Emergency Operations</div>
+<details class="el aid" id="aid-avef" open><summary><span class="code">AVEF</span><h3>Lost comm route · 91.185</h3></summary><div class="el-b">
+<ul class="aid-l">
+<li><b>A</b><span class="aid-m">ssigned route in the last clearance</span></li>
+<li><b>V</b><span class="aid-m">ectored — direct to the fix, route, or airway in the vector clearance</span></li>
+<li><b>E</b><span class="aid-m">xpected route in a further clearance</span></li>
+<li><b>F</b><span class="aid-m">iled route</span></li>
+</ul>
+<a class="aid-src" href="#IR-VII-A-K1">IR.VII.A.K1 →</a>
+</div></details>
+
+<details class="el aid" id="aid-mea" open><summary><span class="code">MEA</span><h3>Lost comm altitude · 91.185</h3></summary><div class="el-b">
+<p class="aid-x">Fly the highest of, for each segment:</p>
+<ul class="aid-l">
+<li><b>M</b><span class="aid-m">inimum IFR altitude (MEA, MOCA, or 91.177)</span></li>
+<li><b>E</b><span class="aid-m">xpected altitude</span></li>
+<li><b>A</b><span class="aid-m">ssigned altitude in the last clearance</span></li>
+</ul>
+<a class="aid-src" href="#IR-VII-A-K1">IR.VII.A.K1 →</a>
+</div></details>
+
+<div class="group aid-g">Reference</div>
+<details class="el aid" id="aid-pave" open><summary><span class="code">PAVE</span><h3>Risk categories</h3></summary><div class="el-b">
+<ul class="aid-l">
+<li><b>P</b><span class="aid-m">ilot</span></li>
+<li><b>A</b><span class="aid-m">ircraft</span></li>
+<li><b>V</b><span class="aid-m"> — enVironment</span></li>
+<li><b>E</b><span class="aid-m">xternal pressures</span></li>
+</ul>
+<a class="aid-src" href="#ref-aero-adm">ADM · SRM →</a>
+</div></details>
+
+<details class="el aid" id="aid-3p" open><summary><span class="code">3P</span><h3>Continuous risk assessment</h3></summary><div class="el-b">
+<ul class="aid-l">
+<li><b>P</b><span class="aid-m">erceive</span></li>
+<li><b>P</b><span class="aid-m">rocess</span></li>
+<li><b>P</b><span class="aid-m">erform</span></li>
+</ul>
+<a class="aid-src" href="#ref-aero-adm">ADM · SRM →</a>
+</div></details>
+
+<details class="el aid" id="aid-decide" open><summary><span class="code">DECIDE</span><h3>Decision model</h3></summary><div class="el-b">
+<ul class="aid-l">
+<li><b>D</b><span class="aid-m">etect</span></li>
+<li><b>E</b><span class="aid-m">stimate</span></li>
+<li><b>C</b><span class="aid-m">hoose</span></li>
+<li><b>I</b><span class="aid-m">dentify</span></li>
+<li><b>D</b><span class="aid-m">o</span></li>
+<li><b>E</b><span class="aid-m">valuate</span></li>
+</ul>
+<a class="aid-src" href="#ref-aero-adm">ADM · SRM →</a>
+</div></details>
+
+<details class="el aid" id="aid-raimi" open><summary><span class="code">RAIMI</span><h3>Hazardous attitudes → antidotes</h3></summary><div class="el-b">
+<ul class="aid-l">
+<li><b>R</b><span class="aid-m">esignation → I'm not helpless.</span></li>
+<li><b>A</b><span class="aid-m">nti-authority → Follow the rules.</span></li>
+<li><b>I</b><span class="aid-m">mpulsivity → Not so fast. Think first.</span></li>
+<li><b>M</b><span class="aid-m">acho → Taking chances is foolish.</span></li>
+<li><b>I</b><span class="aid-m">nvulnerability → It could happen to me.</span></li>
+</ul>
+<a class="aid-src" href="#ref-aero-adm">ADM · SRM →</a>
+</div></details>
+
+<details class="el aid" id="aid-mcprawn" open><summary><span class="code">MCPRAWN</span><h3>Special use airspace</h3></summary><div class="el-b">
+<ul class="aid-l">
+<li><b>M</b><span class="aid-m">OA — cleared through only with IFR separation</span></li>
+<li><b>C</b><span class="aid-m">ontrolled firing area — not charted</span></li>
+<li><b>P</b><span class="aid-m">rohibited — never routed through</span></li>
+<li><b>R</b><span class="aid-m">estricted — active: routed around</span></li>
+<li><b>A</b><span class="aid-m">lert — see and avoid in VMC</span></li>
+<li><b>W</b><span class="aid-m">arning — beyond 3 NM offshore</span></li>
+<li><b>N</b><span class="aid-m">ational Security Area — voluntary avoidance</span></li>
+</ul>
+<a class="aid-src" href="#ref-air-sua">SUA · TFR →</a>
+</div></details>
+
+<details class="el aid" id="aid-vantss" open><summary><span class="code">VANTSS</span><h3>Reasons for TFRs · 91.137–91.145</h3></summary><div class="el-b">
+<ul class="aid-l">
+<li><b>V</b><span class="aid-m">IPs</span></li>
+<li><b>A</b><span class="aid-m">ir shows</span></li>
+<li><b>N</b><span class="aid-m">atural disasters</span></li>
+<li><b>T</b><span class="aid-m">heme parks</span></li>
+<li><b>S</b><span class="aid-m">tadiums and sporting events</span></li>
+<li><b>S</b><span class="aid-m">pace launches</span></li>
+</ul>
+<a class="aid-src" href="#ref-air-sua">SUA · TFR →</a>
+</div></details>
+
+</div>
 </section>
 
 <!-- ============ REGS ============ -->
@@ -3004,6 +3390,20 @@ mark{background:#ffe27a;color:#14222f;border-radius:2px}
   tasks.forEach(t=>io.observe(t));
 
   const els=[...document.querySelectorAll('details.el')];
+  els.forEach(d=>d._def=d.open);
+
+  // memory aids quiz mode: hide meanings, tap a line to reveal
+  const aids=document.getElementById('ref-mn'), aidQuiz=document.getElementById('aidQuiz');
+  aidQuiz.onclick=()=>{
+    const on=aids.classList.toggle('quiz-on');
+    aidQuiz.setAttribute('aria-pressed',on); aidQuiz.textContent=on?'Show meanings':'Quiz me: hide meanings';
+    aids.querySelectorAll('.aid-m.rev').forEach(m=>m.classList.remove('rev'));
+  };
+  aids.addEventListener('click',e=>{
+    if(!aids.classList.contains('quiz-on')) return;
+    const row=e.target.closest('.aid-l li,.aid-x'); if(!row) return;
+    row.querySelectorAll('.aid-m').forEach(m=>m.classList.toggle('rev'));
+  });
   document.getElementById('expand').onclick=()=>els.forEach(d=>d.open=true);
   document.getElementById('collapse').onclick=()=>els.forEach(d=>d.open=false);
   document.getElementById('top').onclick=()=>window.scrollTo({top:0});
@@ -3025,7 +3425,7 @@ mark{background:#ffe27a;color:#14222f;border-radius:2px}
   function run(){
     const term=q.value.trim(); clear.hidden=!term; unmark();
     if(!term){
-      els.forEach(d=>{d.hidden=false;d.open=false});
+      els.forEach(d=>{d.hidden=false;d.open=d._def});
       quizItems.forEach(x=>x.hidden=false);
       document.querySelectorAll('.group,.quiz,.task,.note,.refs,.leg').forEach(x=>x.hidden=false);
       areaHs.forEach(x=>x.hidden=false);

@@ -248,7 +248,7 @@ details.aid>summary h3{font-size:13.5px;color:var(--muted)}
 <nav class="toc" id="toc" aria-label="Tasks"></nav>
 
 <main id="main">
-<div class="revbar" id="revBar" hidden><span class="revbar-t"><b>Review list</b> <span id="revTxt"></span></span><button class="btn" id="revExit">Show everything</button></div>
+<div class="revbar" id="revBar" hidden><span class="revbar-t"><b>Review list</b> <span id="revTxt"></span></span><button class="btn" id="revClear">Clear review list</button><button class="btn" id="revExit">Show everything</button></div>
 <div class="intro">
   <h1>Instrument Rating ACS · All Areas of Operation</h1>
   <p>Every Knowledge and Risk Management element in ACS order, with the Skill elements and checkride tolerances for each task. Tap an element to open it, search for any reg or topic, and work the scenarios at the end of each task the way an examiner would ask them.</p>
@@ -3505,6 +3505,10 @@ details.aid>summary h3{font-size:13.5px;color:var(--muted)}
       if(rerun) run();
       totals();
     }
+    document.getElementById('revClear').onclick=()=>{
+      Object.keys(state).forEach(k=>{if(state[k]==='rev') delete state[k];}); save(); items.forEach(paint);
+      leaveReview(true); window.scrollTo({top:0});
+    };
     revBtn.onclick=()=>reviewing?(leaveReview(true),window.scrollTo({top:0})):enterReview();
     document.getElementById('revExit').onclick=()=>{leaveReview(true);window.scrollTo({top:0});};
     document.getElementById('q').addEventListener('input',()=>{if(reviewing) leaveReview(false);});
